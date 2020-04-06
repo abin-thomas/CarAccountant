@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Car Accountant</string>
+    <string name="DB_NAME">carAccountantDB</string>
+    <string name="TABLE_INCOME">tblIncome</string>
+    <string name="TABLE_EXPENSE">tblExpense</string>
+
 </resources>

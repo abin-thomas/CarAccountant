@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    tools:context="com.atmcorp.caraccountant.MainActivity" >
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_BtnBottom"
@@ -147,7 +147,7 @@
         app:layout_constraintGuide_percent="0.3" />
 
     <TextView
-        android:id="@+id/txt_Income"
+        android:id="@+id/lbl_Income"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Income :"
@@ -157,7 +157,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline_currentStatus" />
 
     <TextView
-        android:id="@+id/txt_Expense"
+        android:id="@+id/lbl_Expense"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Expense :"
@@ -167,7 +167,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline_currentEarning" />
 
     <TextView
-        android:id="@+id/txt_Saving"
+        android:id="@+id/lbl_Saving"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Savings :"

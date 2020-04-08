@@ -224,7 +224,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center_vertical"
-        android:text="Approx Income(No HST)"
+        android:text="Income Without HST"
         app:layout_constraintBottom_toTopOf="@+id/guideline_nohstbottom"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical2"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical1"
@@ -257,19 +257,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Submit"
+        android:onClick="callAddRecord"
         app:layout_constraintBottom_toTopOf="@+id/guideline_btnsbottom"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical5"
-        app:layout_constraintStart_toStartOf="@+id/guideline_vertical4"
-        app:layout_constraintTop_toTopOf="@+id/guideline_btnstop" />
-
-    <Button
-        android:id="@+id/btn_clear"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:onClick="clearAll"
-        android:text="Clear"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_btnsbottom"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical2"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical1"
         app:layout_constraintTop_toTopOf="@+id/guideline_btnstop" />
 
@@ -409,7 +399,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="0"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toTopOf="@+id/guideline_nohstbottom"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical5"
@@ -439,5 +428,12 @@
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical4"
         app:layout_constraintTop_toTopOf="@+id/guideline_netincometop" />
 
-
+    <lecho.lib.hellocharts.view.PieChartView
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_graphbottom"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical5"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical1"
+        app:layout_constraintTop_toTopOf="@+id/guideline_graphtop" />
 </androidx.constraintlayout.widget.ConstraintLayout>

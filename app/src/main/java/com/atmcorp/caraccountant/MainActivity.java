@@ -33,9 +33,9 @@ public class MainActivity extends AppCompatActivity {
         //create the income table
         db.execSQL("CREATE TABLE IF NOT EXISTS " + getString(R.string.TABLE_INCOME) +
                 "(recordID INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "dateField TEXT, startKms INTEGER,endKms INTEGER," +
-                "totalKms INTEGER,eatsEarning NUMERIC, grossEarning  NUMERIC,"+
-                "hst NUMERIC, netEarning NUMERIC);");
+                "dateField TEXT, startOdometer INTEGER,endOdometer INTEGER," +
+                "totalOdometer INTEGER,totalIncome NUMERIC, incomeNoHST  NUMERIC,"+
+                "approxHST NUMERIC, netIncome NUMERIC);");
 
         //create the expense table
         db.execSQL("CREATE TABLE IF NOT EXISTS " + getString(R.string.TABLE_EXPENSE) +

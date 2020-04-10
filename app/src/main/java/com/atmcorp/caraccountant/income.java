@@ -201,8 +201,8 @@ public class income extends AppCompatActivity {
         PieChartView pieChartView = findViewById(R.id.chart);
         ArrayList<SliceValue> pieData = new ArrayList<SliceValue>();
 
-        pieData.add(new SliceValue(currYearNetIncome, Color.BLUE).setLabel("Net Income : "+currYearNetIncome));
-        pieData.add(new SliceValue(currYearHST, Color.GRAY).setLabel("HST : "+currYearHST));
+        pieData.add(new SliceValue(currYearNetIncome, Color.GREEN).setLabel("Net Income : "+currYearNetIncome));
+        pieData.add(new SliceValue(currYearHST, Color.RED).setLabel("HST : "+currYearHST));
 
         PieChartData pieChartData = new PieChartData(pieData);
         pieChartData.setHasLabels(true);
@@ -214,20 +214,17 @@ public class income extends AppCompatActivity {
 
     }
 
-    private void fetchData()
+    public void fetchData()
     {
         DB_NAME = getString(R.string.DB_NAME); //getting the value from strings.xml
-        //create our db
-
 
         int currentYear = Calendar.getInstance().get(Calendar.YEAR);
-
 
         db = this.openOrCreateDatabase(DB_NAME, MODE_PRIVATE, null);
 
         Cursor c = db.rawQuery("select " +
-                "sum(netEarning)," +
-                "sum(hst)" +
+                "sum(netIncome)," +
+                "sum(approxHST)" +
                 " from "+ getString(R.string.TABLE_INCOME) +
                 " where substr(dateField,7)like '"+ currentYear +"'",null);
 
@@ -245,6 +242,8 @@ public class income extends AppCompatActivity {
 
         db.close();
     }
+
+
     public void fetchValues()
     {
         stringDate = et_date.getText().toString();
@@ -265,13 +264,13 @@ public class income extends AppCompatActivity {
 
         ContentValues newValues = new ContentValues();
         newValues.put("dateField", stringDate);
-        newValues.put("startKms", intStartKms);
-        newValues.put("endKms", intEndKms);
-        newValues.put("totalKms", (intEndKms - intStartKms));
-        newValues.put("eatsEarning",tempNoHstEarning);
-        newValues.put("grossEarning", stringEarningAmount);
-        newValues.put("hst", stringHstAmount);
-        newValues.put("netEarning", stringNetIncome);
+        newValues.put("startOdometer", intStartKms);
+        newValues.put("endOdometer", intEndKms);
+        newValues.put("totalOdometer", (intEndKms - intStartKms));
+        newValues.put("totalIncome", stringEarningAmount);
+        newValues.put("incomeNoHST",tempNoHstEarning);
+        newValues.put("approxHST", stringHstAmount);
+        newValues.put("netIncome", stringNetIncome);
 
         //insert details
         long result = db.insert(getString(R.string.TABLE_INCOME),null,newValues);

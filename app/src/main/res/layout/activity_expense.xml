@@ -189,6 +189,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Submit"
+        android:onClick="callAddRecord"
         app:layout_constraintBottom_toTopOf="@+id/guideline_btnbottom"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical5"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical1"
@@ -271,11 +272,12 @@
         app:layout_constraintTop_toTopOf="@+id/guideline_odometertop" />
 
     <EditText
-        android:id="@+id/txt_category"
+        android:id="@+id/txt_expenseCategory"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
+        android:onClick="callShowExpenseCategory"
         app:layout_constraintBottom_toTopOf="@+id/guideline_categorybottom"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical5"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical4"

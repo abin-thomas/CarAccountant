@@ -196,7 +196,7 @@ public class income extends AppCompatActivity {
 
     public void createIncomeChart()
     {
-        fetchData(); //This function populates the 'currYearNetIncome' and 'currYearHST' from table
+        fetchIncomeData(); //This function populates the 'currYearNetIncome' and 'currYearHST' from table
 
         PieChartView pieChartView = findViewById(R.id.chart);
         ArrayList<SliceValue> pieData = new ArrayList<SliceValue>();
@@ -214,7 +214,7 @@ public class income extends AppCompatActivity {
 
     }
 
-    public void fetchData()
+    public void fetchIncomeData()
     {
         DB_NAME = getString(R.string.DB_NAME); //getting the value from strings.xml
 
